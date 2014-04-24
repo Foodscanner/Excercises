@@ -1,4 +1,4 @@
-package FoodServer.Exceptions;
+package foodServer.exceptions;
 
 public class NumberInvalidFormatException extends Exception {
 

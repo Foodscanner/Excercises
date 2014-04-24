@@ -1,4 +1,4 @@
-package FoodServer;
+package foodServer;
 
 public class ArticleUtil {
 	public Article article;

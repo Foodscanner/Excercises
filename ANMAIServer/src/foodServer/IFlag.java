@@ -1,4 +1,4 @@
-package FoodServer;
+package foodServer;
 
 public interface IFlag{
 

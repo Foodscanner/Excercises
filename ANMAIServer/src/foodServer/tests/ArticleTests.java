@@ -1,7 +1,7 @@
 /**
  * 
  */
-package FoodServer.tests;
+package foodServer.tests;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import FoodServer.Article;
+import foodServer.Article;
 
 /**
  * @author Christian
@@ -46,7 +46,7 @@ public class ArticleTests {
   public void tearDown() throws Exception {}
 
   /**
-   * Test method for {@link FoodServer.Article#Article(long)}.
+   * Test method for {@link foodServer.Article#Article(long)}.
    */
   @Test
   public void testArticle() {
@@ -54,7 +54,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getID()}.
+   * Test method for {@link foodServer.Article#getID()}.
    */
   @Test
   public void testGetID() {
@@ -62,7 +62,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#setID(long)}.
+   * Test method for {@link foodServer.Article#setID(long)}.
    */
   @Test
   public void testSetID() {
@@ -70,7 +70,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getName()}.
+   * Test method for {@link foodServer.Article#getName()}.
    */
   @Test
   public void testGetName() {
@@ -78,7 +78,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#setName(java.lang.String)}.
+   * Test method for {@link foodServer.Article#setName(java.lang.String)}.
    */
   @Test
   public void testSetName() {
@@ -86,7 +86,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getDescription()}.
+   * Test method for {@link foodServer.Article#getDescription()}.
    */
   @Test
   public void testGetDescription() {
@@ -94,7 +94,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#setDescription(java.lang.String)}.
+   * Test method for {@link foodServer.Article#setDescription(java.lang.String)}.
    */
   @Test
   public void testSetDescription() {
@@ -102,7 +102,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getImageURI()}.
+   * Test method for {@link foodServer.Article#getImageURI()}.
    */
   @Test
   public void testGetImageURI() {
@@ -110,7 +110,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#setImageURI(java.net.URI)}.
+   * Test method for {@link foodServer.Article#setImageURI(java.net.URI)}.
    */
   @Test
   public void testSetImageURI() {
@@ -118,7 +118,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getIngredients()}.
+   * Test method for {@link foodServer.Article#getIngredients()}.
    */
   @Test
   public void testGetIngredients() {
@@ -126,7 +126,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#setIngredients(java.util.List)}.
+   * Test method for {@link foodServer.Article#setIngredients(java.util.List)}.
    */
   @Test
   public void testSetIngredientsListOfIIngredient() {
@@ -134,7 +134,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getProduct()}.
+   * Test method for {@link foodServer.Article#getProduct()}.
    */
   @Test
   public void testGetProduct() {
@@ -142,7 +142,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getFlags()}.
+   * Test method for {@link foodServer.Article#getFlags()}.
    */
   @Test
   public void testGetFlags() {
@@ -150,7 +150,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#getProductFlags()}.
+   * Test method for {@link foodServer.Article#getProductFlags()}.
    */
   @Test
   public void testGetProductFlags() {
@@ -158,7 +158,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#setIngredients(FoodServer.IIngredient)}.
+   * Test method for {@link foodServer.Article#setIngredients(foodServer.IIngredient)}.
    */
   @Test
   public void testSetIngredientsIIngredient() {
@@ -166,7 +166,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#removeFlag(FoodServer.IFlag)}.
+   * Test method for {@link foodServer.Article#removeFlag(foodServer.IFlag)}.
    */
   @Test
   public void testRemoveFlag() {
@@ -174,7 +174,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link FoodServer.Article#persist()}.
+   * Test method for {@link foodServer.Article#persist()}.
    */
   @Test
   public void testPersist() {

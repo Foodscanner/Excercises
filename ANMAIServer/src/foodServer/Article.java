@@ -1,4 +1,4 @@
-package FoodServer;
+package foodServer;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -74,18 +74,18 @@ public class Article implements IArticle {
 		throw new UnsupportedOperationException();
 	}
 
-    @Override
-    public void setIngredients(IIngredient aIIngredient) {
-    // TODO Auto-generated method stub
-    }
-
-    @Override
     public void removeFlag(IFlag aFlag) {
     // TODO Auto-generated method stub
-    }
+    
+  }
 
-    @Override
     public void persist() {
     // TODO Auto-generated method stub
+    
+  }
+
+    public void addIngredient(IIngredient aIIngredient) {
+    // TODO Auto-generated method stub
+    
   }
 }

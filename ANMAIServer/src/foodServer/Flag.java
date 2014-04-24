@@ -1,4 +1,4 @@
-package FoodServer;
+package foodServer;
 
 public class Flag implements IFlag{
 	private long _id;

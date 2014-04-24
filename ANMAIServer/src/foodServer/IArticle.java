@@ -1,4 +1,4 @@
-package FoodServer;
+package foodServer;
 
 import java.net.URI;
 import java.util.List;
@@ -12,8 +12,6 @@ public interface IArticle {
 	public void setImageURI(URI aImageURI);
 
 	public void setDescription(String aDescription);
-
-	public void setIngredients(IIngredient aIIngredient);
 
 	public void removeFlag(IFlag aFlag);
 
@@ -34,4 +32,6 @@ public interface IArticle {
 	public List<IFlag> getProductFlags();
 
 	public IArticle getProduct();
+
+    public void addIngredient(IIngredient aIIngredient);
 }

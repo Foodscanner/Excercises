@@ -5,4 +5,4 @@
  * @author Christian
  *
  */
-package FoodServer.tests;
+package foodServer.tests;
