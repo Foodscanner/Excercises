@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Article" xmlns:tns="http://www.example.org/Article" elementFormDefault="qualified">
+
+
+
+    <attribute name="ArticleID" type="int">
+    	<annotation>
+    		<documentation>The ArticleID should equal the corresponding EAN of the product wherever that is possible.
+Non-EAN-Articles should not have IDs that may be valid EANs for other products.</documentation>
+    	</annotation></attribute>
+
+
+
+    <attribute name="PicturePath" type="anyURI"></attribute>
+
+
+    <attribute name="ArticleName" type="string"></attribute>
+
+    <attribute name="Describtion" type="string"></attribute>
+
+    <element name="Ingredients" type="tns:IngredientSet"></element>
+
+    <complexType name="IngredientSet">
+    	<sequence minOccurs="0" maxOccurs="unbounded">
+    		<element name="Ingredient" type="tns:Ingredient"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Ingredient">
+    	<sequence minOccurs="0" maxOccurs="unbounded">
+    		<element name="Flag" type="int"></element>
+    	</sequence>
+    	<attribute name="IngredientName" type="string"></attribute>
+    	<attribute name="IngredientDescribtion" type="string"></attribute>
+    </complexType>
+</schema>
