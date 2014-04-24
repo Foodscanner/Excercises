@@ -40,15 +40,12 @@ public class Flag implements IFlag{
 		this._limitToProduct = aLimitToProduct;
 	}
 
-    @Override
     public IFlag copy() {
     // TODO Auto-generated method stub
     return null;
     }
 
-    @Override
     public void persist() {
-      // TODO Auto-generated method stub
-      
+    // TODO Auto-generated method stub 
     }
 }
