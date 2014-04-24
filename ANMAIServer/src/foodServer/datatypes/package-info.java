@@ -5,4 +5,4 @@
  * @author Christian
  *
  */
-package datatypes;
+package foodServer.datatypes;
