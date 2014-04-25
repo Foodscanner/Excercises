@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import foodServer.datatypes.EAN13;
+
 public class EAN13Tests {
 
   @BeforeClass
@@ -24,7 +26,8 @@ public class EAN13Tests {
 
   @Test
   public void validEAN() {
-    assertTrue(EAN13.);
+    EAN13
+    assertTrue(true);
   }
 
 }
