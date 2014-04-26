@@ -5,11 +5,19 @@ import java.util.List;
 
 import foodServer.exceptions.NumberInvalidFormatException;
 
+/**
+ * An implementation of the GS1 specification for the EAN with 13 digits
+ * @author Christian Gläser
+ *
+ */
 public class EAN13 implements IEAN{
   
   String ean13;
   
-  public EAN13() {
+  /**
+   * Standard constructor for the EAN
+   */
+public EAN13() {
     
   }
   
