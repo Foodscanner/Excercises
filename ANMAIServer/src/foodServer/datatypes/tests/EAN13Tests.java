@@ -38,5 +38,29 @@ public class EAN13Tests {
     //System.out.println("invalidEan returns: " + ean.isValid("5010019640162"));
     assertFalse(ean.isValid("5010019640162"));
   }
-
+  
+  @Test
+  public void validISBN() {
+    EAN13 ean = new EAN13();
+    assertTrue(ean.isISBN("9783446430150"));
+  }
+  
+  @Test
+  public void invalidISBN() {
+    EAN13 ean = new EAN13();
+    assertFalse(ean.isISBN("9883446430157"));
+  }
+  
+  @Test
+  public void validPrintArticle() {
+    EAN13 ean = new EAN13();
+    assertTrue(ean.isPrintArticle("9773446430151"));
+    assertTrue(ean.isPrintArticle("9783446430150"));
+  }
+  
+  @Test
+  public void invalidPrintArticle() {
+    EAN13 ean = new EAN13();
+    assertFalse(ean.isPrintArticle("5010019640162"));
+  }
 }
