@@ -2,6 +2,11 @@ package foodServer;
 
 import java.util.List;
 
+/**
+ * An interface for Ingredients
+ * @author Christian Gläser
+ *
+ */
 public interface IIngredient {
   
   public long getId();

@@ -3,6 +3,11 @@ package foodServer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Ingredients consist of names and {@link Flags}
+ * @author Christian Gläser
+ *
+ */
 public class Ingredient implements IIngredient {
 	private long _id;
 	private String _name;

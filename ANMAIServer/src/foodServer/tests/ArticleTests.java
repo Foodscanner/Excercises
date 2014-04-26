@@ -1,6 +1,3 @@
-/**
- * 
- */
 package foodServer.tests;
 
 import static org.junit.Assert.*;
@@ -13,8 +10,10 @@ import org.junit.Test;
 
 import foodServer.Article;
 
+
 /**
- * @author Christian
+ * Tests for the {@link Article}
+ * @author Christian Gläser
  *
  */
 public class ArticleTests {

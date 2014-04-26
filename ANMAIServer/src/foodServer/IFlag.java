@@ -1,5 +1,10 @@
 package foodServer;
 
+/**
+ * An interface for Flags
+ * @author Christian Gläser
+ *
+ */
 public interface IFlag{
 
 	public void setId(long aId);

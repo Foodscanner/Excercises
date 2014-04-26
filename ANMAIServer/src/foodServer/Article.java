@@ -12,6 +12,11 @@ import foodServer.datatypes.EAN13;
 import foodServer.datatypes.IEAN;
 import foodServer.exceptions.NumberInvalidFormatException;
 
+/**
+ * An Article implementation
+ * @author Christian Gläser
+ *
+ */
 public class Article implements IArticle {
 
 	private IEAN id;

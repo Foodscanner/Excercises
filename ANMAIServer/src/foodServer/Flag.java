@@ -1,5 +1,10 @@
 package foodServer;
 
+/**
+ * Allergy flags for {@link Article}
+ * @author Christian Gläser
+ *
+ */
 public class Flag implements IFlag{
 	private long _id;
 	private String _name;

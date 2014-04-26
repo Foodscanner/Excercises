@@ -5,6 +5,11 @@ import java.util.List;
 
 import foodServer.datatypes.IEAN;
 
+/**
+ * An Interface for {@link Article}
+ * @author Christian Gläser
+ *
+ */
 public interface IArticle {
 	
 	public IArticle getArticle();
