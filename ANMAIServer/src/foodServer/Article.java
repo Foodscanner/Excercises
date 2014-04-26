@@ -4,8 +4,12 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import foodServer.datatypes.EAN13;
+import foodServer.datatypes.IEAN;
+import foodServer.exceptions.NumberInvalidFormatException;
+
 public class Article implements IArticle {
-	private long _id;
+	private IEAN _id;
 	private String _name;
 	private String _description;
 	private URI _imageURI;
@@ -15,17 +19,17 @@ public class Article implements IArticle {
 	public ArticleUtil _unnamed_ArticleUtil_;
 	public Flag _unnamed_Flag_;
 	
-	public Article(long aId){
-	  setID(aId);
+	public Article(IEAN aId){
+	  _id = aId;
 	}
 
-	public long getID() {
-		return this._id;
+	public IEAN getID() {
+		return _id;
 	}
 
-	public void setID(long aId) {
+	public void setID(IEAN aId) {
 	  //TODO Necessary????
-		this._id = aId;
+		_id = aId;
 	}
 
 	public String getName() {

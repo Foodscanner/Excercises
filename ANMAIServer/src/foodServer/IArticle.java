@@ -3,9 +3,11 @@ package foodServer;
 import java.net.URI;
 import java.util.List;
 
+import foodServer.datatypes.IEAN;
+
 public interface IArticle {
 
-	public void setID(long aID);
+	public void setID(IEAN aID);
 
 	public void setName(String aName);
 
@@ -17,7 +19,7 @@ public interface IArticle {
 
 	public void persist();
 	
-	public long getID();
+	public IEAN getID();
 
 	public String getName();
 

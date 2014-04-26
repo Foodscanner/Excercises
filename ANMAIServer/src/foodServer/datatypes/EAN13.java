@@ -98,6 +98,10 @@ public class EAN13 implements IEAN{
     }
     else throw new NumberInvalidFormatException("This is not a valid EAN!");
   }
+
+public String getEAN() {
+	return ean13;
+}
   
   
 }

@@ -9,6 +9,8 @@ public interface IEAN {
  	 * @return
  	 */
 	public boolean isValid(String ean);
+	
+	public String getEAN();
   
 	public void setEan(String ean) throws NumberInvalidFormatException;
 
