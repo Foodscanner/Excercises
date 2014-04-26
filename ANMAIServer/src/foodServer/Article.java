@@ -6,23 +6,27 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import foodServer.datatypes.EAN13;
 import foodServer.datatypes.IEAN;
 import foodServer.exceptions.NumberInvalidFormatException;
 
 public class Article implements IArticle {
-	@Id
+
 	private IEAN id;
-	@Column
+
 	private String name;
-	@Column
+
 	private String description;
-	@Column
+
 	private URI imageURI;
 	private List<IIngredient> ingredients;
-	private List<IFlag> _flags;
+	
+	private List<IFlag> flags;
 
+	
+	
 	public Article(IEAN aId) {
 		id = aId;
 	}
@@ -80,7 +84,7 @@ public class Article implements IArticle {
 	}
 	
 	public void removeFlag(IFlag aFlag) {
-		_flags.remove(aFlag);
+		flags.remove(aFlag);
 	}
 
 	public List<IFlag> getProductFlags() {
