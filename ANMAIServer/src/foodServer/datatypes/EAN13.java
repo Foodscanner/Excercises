@@ -9,11 +9,12 @@ public class EAN13 implements IEAN{
   
   long ean13;
   
+  public EAN13() {
+    
+  }
+  
   public EAN13(Long ean) throws NumberInvalidFormatException {
-    if(isValid(ean)){
-      ean13 = ean;
-    }
-    else throw new NumberInvalidFormatException("This is not a valid EAN!");
+    setEan(ean);
   }
   
   /**
@@ -28,5 +29,12 @@ public class EAN13 implements IEAN{
        return true;
     }
     else return false;
-  } 
+  }
+  
+  public void setEan(Long ean) throws NumberInvalidFormatException{
+    if(isValid(ean)){
+      ean13 = ean;
+    }
+    else throw new NumberInvalidFormatException("This is not a valid EAN!");
+  }
 }

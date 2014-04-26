@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import foodServer.datatypes.EAN13;
+import foodServer.datatypes.IEAN;
 
 public class EAN13Tests {
 
@@ -26,8 +27,8 @@ public class EAN13Tests {
 
   @Test
   public void validEAN() {
-    EAN13
-    assertTrue(true);
+    IEAN ean = new EAN13();
+    assertTrue(ean.isValid(7603010190020L));
   }
 
 }
