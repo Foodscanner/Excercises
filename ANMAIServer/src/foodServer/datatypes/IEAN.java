@@ -4,8 +4,12 @@ import foodServer.exceptions.NumberInvalidFormatException;
 
 public interface IEAN {
   
-  public boolean isValid(Long ean);
+	/**
+	 * @param ean 
+ 	 * @return
+ 	 */
+	public boolean isValid(String ean);
   
-  public void setEan(Long ean) throws NumberInvalidFormatException;
+	public void setEan(String ean) throws NumberInvalidFormatException;
 
 }
