@@ -134,7 +134,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#getProduct()}.
+   * Test method for {@link foodServer.Article#getArticle()}.
    */
   @Test
   public void testGetProduct() {
