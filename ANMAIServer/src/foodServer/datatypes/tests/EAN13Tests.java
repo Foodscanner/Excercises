@@ -28,7 +28,15 @@ public class EAN13Tests {
   @Test
   public void validEAN() {
     IEAN ean = new EAN13();
-    assertTrue(ean.isValid(7603010190020L));
+    //System.out.println("valid ean returns: " + ean.isValid("5010019640161"));
+    assertTrue(ean.isValid("5010019640161"));
+  }
+  
+  @Test
+  public void invalidEAN() {
+    IEAN ean = new EAN13();
+    //System.out.println("invalidEan returns: " + ean.isValid("5010019640162"));
+    assertFalse(ean.isValid("5010019640162"));
   }
 
 }
