@@ -1,4 +1,4 @@
-package foodServer.tests;
+package foodServer.datatypes.tests;
 
 import static org.junit.Assert.*;
 
