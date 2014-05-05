@@ -16,6 +16,9 @@ public interface IEAN {
 	public boolean isValid(String ean);
 	
 	public String getEAN();
+	
+	//?
+	//public long getEANAsLong();
   
 	public void setEan(String ean) throws NumberInvalidFormatException;
 
