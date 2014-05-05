@@ -23,25 +23,25 @@ public class ArticleTests {
    Article testArticle;
 
   /**
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception An exception
    */
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {}
 
   /**
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception An exception
    */
   @AfterClass
   public static void tearDownAfterClass() throws Exception {}
 
   /**
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception An exception
    */
   @Before
   public void setUp() throws Exception {}
 
   /**
-   * @throws java.lang.Exception
+   * @throws java.lang.Exception An exception
    */
   @After
   public void tearDown() throws Exception {}
@@ -126,13 +126,7 @@ public class ArticleTests {
     fail("Not yet implemented");
   }
 
-  /**
-   * Test method for {@link foodServer.Article#setIngredients(java.util.List)}.
-   */
-  @Test
-  public void testSetIngredientsListOfIIngredient() {
-    fail("Not yet implemented");
-  }
+
 
   /**
    * Test method for {@link foodServer.Article#getArticle()}.
@@ -158,13 +152,7 @@ public class ArticleTests {
     fail("Not yet implemented");
   }
 
-  /**
-   * Test method for {@link foodServer.Article#setIngredients(foodServer.IIngredient)}.
-   */
-  @Test
-  public void testSetIngredientsIIngredient() {
-    fail("Not yet implemented");
-  }
+
 
   /**
    * Test method for {@link foodServer.Article#removeFlag(foodServer.IFlag)}.

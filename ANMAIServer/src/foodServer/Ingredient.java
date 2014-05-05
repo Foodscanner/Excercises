@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ingredients consist of names and {@link Flags}
+ * Ingredients consist of names and {@link IFlag}s
  * @author Christian Gläser
  *
  */

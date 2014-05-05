@@ -33,9 +33,10 @@ public class Article implements IArticle {
 	
 	
 	/**
-	 * @param aId
-	 * @throws NumberInvalidFormatException 
 	 * Constructor of an article with parameter id
+	 * @param aId The id to set
+	 * @throws NumberInvalidFormatException This exception is thrown if number is not a valid EAN. Use EAN validation from datatypes/EAN13 to prevent exception
+	 * 
 	 */
 	public Article(long aId) throws NumberInvalidFormatException {
 	    
@@ -43,8 +44,9 @@ public class Article implements IArticle {
 	}
 
 	/**
-	 * @see foodServer.IArticle#getID()
 	 * Gets the id of the Article as long
+	 * @see foodServer.IArticle#getID()
+	 * 
 	 */
 	public long getID() {
 		return id.getEAN();
@@ -54,9 +56,10 @@ public class Article implements IArticle {
 	        return id;
 	}
 	
-	/**(non-Javadoc)
-	 * @see foodServer.IArticle#setID(long)
+	/**
 	 * If aId is a valid id, it is set as new id
+	 * @see foodServer.IArticle#setID(long)
+	 * @param aID The id to set
 	 */
 	public void setID(long aID){
 	  IEAN ean;

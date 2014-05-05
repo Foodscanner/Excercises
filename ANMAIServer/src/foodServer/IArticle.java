@@ -21,7 +21,7 @@ public interface IArticle {
 
 	/**
 	 * Necessary in case EAN changes, should be used with caution
-	 * @param aID
+	 * @param aID This id is being set
 	 */
 	public void setID(long aID);
 
@@ -31,28 +31,37 @@ public interface IArticle {
 	 */
 	public String getName();
 	
+	/**
+	 * @param aName The name to set
+	 */
 	public void setName(String aName);
 
 	//Image URI
 	public URI getImageURI();
 	
+	/**
+	 * @param aImageURI The image URI to set
+	 */
 	public void setImageURI(URI aImageURI);
 	
 	//Description
 	public String getDescription();
 
+	/**
+	 * @param aDescription The description
+	 */
 	public void setDescription(String aDescription);
 	
 	//Flags
 	/**
 	 * Adds a product-specific flag
-	 * @param aFlag
+	 * @param aFlag A flag that should be added to IArticle
 	 */
 	public void addFlag(IFlag aFlag);
 
 	/**
 	 * Removes a product-specific flag
-	 * @param aFlag
+	 * @param aFlag A flag that should be removed from IArticle
 	 */
 	public void removeFlag(IFlag aFlag);
 	
@@ -63,8 +72,14 @@ public interface IArticle {
 	//Ingredients
 	public List<IIngredient> getIngredients();
 	
+    /**
+     * @param ingredient The ingredient to add
+     */
     public void addIngredient(IIngredient ingredient);
     
+    /**
+     * @param ingredient The ingredient to remove
+     */
     public void removeIngredient(IIngredient ingredient);
     
 

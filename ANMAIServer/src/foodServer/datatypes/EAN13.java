@@ -27,15 +27,16 @@ public EAN13() {
   
   /**
    * Returns true if 
-   * @param number 
-   * @return true if number to check is an ean
-   * @source: Hibernate Validator v1.4
+   * @param value The value to check
+   * @return true if number to check is an GS1 EAN13, else false
+   * source: Hibernate Validator v1.4
    */
-  public boolean isValid(long insertValue) {
-    Long longInsertValue = new Long(insertValue);
-    String value =  longInsertValue.toString();
-			if (value == null) return false;
-			String creditCard = value;
+  public boolean isValid(long value) {
+    Long longValue = new Long(value);
+    String stringValue =  longValue.toString();
+			if (stringValue == null) return false;
+			if (stringValue.length()!=13) return false;
+			String creditCard = stringValue;
 			char[] chars = creditCard.toCharArray();
 
 			List<Integer> ints = new ArrayList<Integer>();
@@ -58,7 +59,7 @@ public EAN13() {
   
   /**
    * Returns true, if number is valid GS1 ISBN, a subset of valid EAN's (starts with either 978 or 979
- * @param value
+ * @param insertValue The value to check
  * @return true, if number is ISBN
  */
   public boolean isISBN(long insertValue) {
@@ -79,6 +80,10 @@ public EAN13() {
 	  return retVal;
   }
   
+  /**
+   * @param insertValue The value to check
+   * @return true, if valid GS1 ISSN, a subset of valid EANs
+   */
   public boolean isISSN(long insertValue) {
 	  boolean retVal = false;
 	  if(isValid(insertValue)){
@@ -99,13 +104,18 @@ public EAN13() {
   
   /**
    * Returns true, if number is valid GS1 ISSN or ISBN, a subset of valid EAN's (starts with either 977, 978 or 979
- * @param value
+ * @param value This value is being checked
  * @return true, if number is ISSN or ISBN
  */
   public boolean isPrintArticle(long value) {
 	  return(isValid(value)&&(isISBN(value)||isISSN(value)));
   }
   
+  /**
+   * @see foodServer.datatypes.IEAN#setEan(long)
+   * @param ean This value is being checked
+   * Sets/Updates the EAN if EAN is valid
+   */
   public void setEan(long ean) throws NumberInvalidFormatException{
     if(isValid(ean)){
       ean13 = ean;
@@ -113,6 +123,10 @@ public EAN13() {
     else throw new NumberInvalidFormatException("This is not a valid EAN!");
   }
 
+/**
+ * @see foodServer.datatypes.IEAN#getEAN()
+ * Returns the value of the EAN as long
+ */
 public long getEAN() {
 	return ean13;
 }
