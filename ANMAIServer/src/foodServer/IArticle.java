@@ -3,7 +3,6 @@ package foodServer;
 import java.net.URI;
 import java.util.List;
 
-import foodServer.datatypes.IEAN;
 
 /**
  * An Interface for {@link Article}
@@ -18,13 +17,13 @@ public interface IArticle {
 	/**
 	 * @return Returns the EAN of the Product
 	 */
-	public IEAN getID();
+	public long getID();
 
 	/**
 	 * Necessary in case EAN changes, should be used with caution
 	 * @param aID
 	 */
-	public void setID(IEAN aID);
+	public void setID(long aID);
 
 	//Name
 	/**

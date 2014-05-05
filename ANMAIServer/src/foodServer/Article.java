@@ -36,11 +36,23 @@ public class Article implements IArticle {
 		id = aId;
 	}
 
-	public IEAN getID() {
-		return id;
+	public long getID() {
+		return id.getEAN();
+	}
+	
+	public void setID(long aID){
+	  IEAN ean;
+	  try {
+      ean = new EAN13(aID);
+      this.setID(ean);
+      } catch (NumberInvalidFormatException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+      }
+	  
 	}
 
-	public void setID(IEAN aId) {
+	private void setID(IEAN aId) {
 		id = aId;
 	}
 

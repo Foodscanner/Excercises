@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import foodServer.Article;
+import foodServer.datatypes.EAN13;
+import foodServer.exceptions.NumberInvalidFormatException;
 
 
 /**
@@ -65,7 +67,7 @@ public class ArticleTests {
    */
   @Test
   public void testSetID() {
-    fail("Not yet implemented");
+      testArticle.setID(5010019640162L);
   }
 
   /**
