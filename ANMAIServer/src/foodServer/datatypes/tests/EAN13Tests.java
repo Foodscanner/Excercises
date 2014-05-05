@@ -29,38 +29,38 @@ public class EAN13Tests {
   public void validEAN() {
     IEAN ean = new EAN13();
     //System.out.println("valid ean returns: " + ean.isValid("5010019640161"));
-    assertTrue(ean.isValid("5010019640161"));
+    assertTrue(ean.isValid(5010019640161L));
   }
   
   @Test
   public void invalidEAN() {
     IEAN ean = new EAN13();
     //System.out.println("invalidEan returns: " + ean.isValid("5010019640162"));
-    assertFalse(ean.isValid("5010019640162"));
+    assertFalse(ean.isValid(5010019640162L));
   }
   
   @Test
   public void validISBN() {
     EAN13 ean = new EAN13();
-    assertTrue(ean.isISBN("9783446430150"));
+    assertTrue(ean.isISBN(9783446430150L));
   }
   
   @Test
   public void invalidISBN() {
     EAN13 ean = new EAN13();
-    assertFalse(ean.isISBN("9883446430157"));
+    assertFalse(ean.isISBN(9883446430157L));
   }
   
   @Test
   public void validPrintArticle() {
     EAN13 ean = new EAN13();
-    assertTrue(ean.isPrintArticle("9773446430151"));
-    assertTrue(ean.isPrintArticle("9783446430150"));
+    assertTrue(ean.isPrintArticle(9773446430151L));
+    assertTrue(ean.isPrintArticle(9783446430150L));
   }
   
   @Test
   public void invalidPrintArticle() {
     EAN13 ean = new EAN13();
-    assertFalse(ean.isPrintArticle("5010019640162"));
+    assertFalse(ean.isPrintArticle(5010019640162L));
   }
 }

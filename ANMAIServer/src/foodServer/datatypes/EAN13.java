@@ -12,7 +12,7 @@ import foodServer.exceptions.NumberInvalidFormatException;
  */
 public class EAN13 implements IEAN{
   
-  String ean13;
+  long ean13;
   
   /**
    * Standard constructor for the EAN
@@ -21,7 +21,7 @@ public EAN13() {
     
   }
   
-  public EAN13(String ean) throws NumberInvalidFormatException {
+  public EAN13(long ean) throws NumberInvalidFormatException {
     setEan(ean);
   }
   
@@ -31,9 +31,11 @@ public EAN13() {
    * @return true if number to check is an ean
    * @source: Hibernate Validator v1.4
    */
-  public boolean isValid(String value) {
+  public boolean isValid(long insertValue) {
+    Long longInsertValue = new Long(insertValue);
+    String value =  longInsertValue.toString();
 			if (value == null) return false;
-			String creditCard = (String) value;
+			String creditCard = value;
 			char[] chars = creditCard.toCharArray();
 
 			List<Integer> ints = new ArrayList<Integer>();
@@ -59,9 +61,11 @@ public EAN13() {
  * @param value
  * @return true, if number is ISBN
  */
-  public boolean isISBN(String value){
+  public boolean isISBN(long insertValue) {
 	  boolean retVal = false;
-	  if(isValid(value)){
+	  if(isValid(insertValue)){
+	    Long longInsertValue = new Long(insertValue);
+	    String value =  longInsertValue.toString();
 		  char[] chars = value.toCharArray();
 		  List<Integer> ints = new ArrayList<Integer>();
 			for (char c : chars) {
@@ -75,9 +79,11 @@ public EAN13() {
 	  return retVal;
   }
   
-  public boolean isISSN(String value){
+  public boolean isISSN(long insertValue) {
 	  boolean retVal = false;
-	  if(isValid(value)){
+	  if(isValid(insertValue)){
+	    Long longInsertValue = new Long(insertValue);
+	    String value =  longInsertValue.toString();
 		  char[] chars = value.toCharArray();
 		  List<Integer> ints = new ArrayList<Integer>();
 			for (char c : chars) {
@@ -96,18 +102,18 @@ public EAN13() {
  * @param value
  * @return true, if number is ISSN or ISBN
  */
-  public boolean isPrintArticle(String value){
+  public boolean isPrintArticle(long value) {
 	  return(isValid(value)&&(isISBN(value)||isISSN(value)));
   }
   
-  public void setEan(String ean) throws NumberInvalidFormatException{
+  public void setEan(long ean) throws NumberInvalidFormatException{
     if(isValid(ean)){
       ean13 = ean;
     }
     else throw new NumberInvalidFormatException("This is not a valid EAN!");
   }
 
-public String getEAN() {
+public long getEAN() {
 	return ean13;
 }
   

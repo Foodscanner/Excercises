@@ -13,13 +13,13 @@ public interface IEAN {
 	 * @param ean 
  	 * @return
  	 */
-	public boolean isValid(String ean);
+	public boolean isValid(long ean);
 	
-	public String getEAN();
+	public long getEAN();
 	
 	//?
 	//public long getEANAsLong();
   
-	public void setEan(String ean) throws NumberInvalidFormatException;
+	public void setEan(long ean) throws NumberInvalidFormatException;
 
 }
