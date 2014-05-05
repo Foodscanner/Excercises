@@ -9,69 +9,50 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import foodServer.Article;
-import foodServer.datatypes.EAN13;
-import foodServer.exceptions.NumberInvalidFormatException;
 
-
-/**
- * Tests for the {@link Article}
- * @author Christian Gläser
- *
- */
-public class ArticleTests {
+public class ArticlePersistenceTests {
   
-   Article testArticle;
+  Article beforePersistence;
+  Article afterPersistence;
 
-  /**
-   * @throws java.lang.Exception
-   */
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {}
 
-  /**
-   * @throws java.lang.Exception
-   */
   @AfterClass
   public static void tearDownAfterClass() throws Exception {}
 
-  /**
-   * @throws java.lang.Exception
-   */
   @Before
   public void setUp() throws Exception {}
 
-  /**
-   * @throws java.lang.Exception
-   */
   @After
   public void tearDown() throws Exception {}
 
+
   /**
    * Test method for {@link foodServer.Article#Article(long)}.
+   * Tests if an error occurs during persistence
    */
-  @Test
+  @Before
   public void testArticle() {
+    //...article beforePersistence...filling
+    //...article afterPersistence...retrieving
     fail("Not yet implemented");
   }
 
   /**
    * Test method for {@link foodServer.Article#getID()}.
+   * Tests if persisted is equal to id beforePersistence
    */
   @Test
   public void testGetID() {
     fail("Not yet implemented");
   }
 
-  /**
-   * Test method for {@link foodServer.Article#setID(long)}.
-   */
-  @Test
-  public void testSetID() {
-      testArticle.setID(5010019640162L);
-  }
 
   /**
    * Test method for {@link foodServer.Article#getName()}.
+   * Tests if persisted name is equal
+   * 
    */
   @Test
   public void testGetName() {
@@ -79,15 +60,8 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#setName(java.lang.String)}.
-   */
-  @Test
-  public void testSetName() {
-    fail("Not yet implemented");
-  }
-
-  /**
    * Test method for {@link foodServer.Article#getDescription()}.
+   * Tests if persisted Description is equal
    */
   @Test
   public void testGetDescription() {
@@ -95,15 +69,8 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#setDescription(java.lang.String)}.
-   */
-  @Test
-  public void testSetDescription() {
-    fail("Not yet implemented");
-  }
-
-  /**
    * Test method for {@link foodServer.Article#getImageURI()}.
+   * Tests if persisted imageURI is equal
    */
   @Test
   public void testGetImageURI() {
@@ -111,15 +78,8 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#setImageURI(java.net.URI)}.
-   */
-  @Test
-  public void testSetImageURI() {
-    fail("Not yet implemented");
-  }
-
-  /**
    * Test method for {@link foodServer.Article#getIngredients()}.
+   * Tests if all ingredients have been persisted
    */
   @Test
   public void testGetIngredients() {
@@ -127,15 +87,9 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#setIngredients(java.util.List)}.
-   */
-  @Test
-  public void testSetIngredientsListOfIIngredient() {
-    fail("Not yet implemented");
-  }
-
-  /**
    * Test method for {@link foodServer.Article#getArticle()}.
+   * Tests if product can be retrieved from Database...
+   * 
    */
   @Test
   public void testGetProduct() {
@@ -144,6 +98,7 @@ public class ArticleTests {
 
   /**
    * Test method for {@link foodServer.Article#getFlags()}.
+   * Tests if all flags can be retrieved
    */
   @Test
   public void testGetFlags() {
@@ -152,6 +107,7 @@ public class ArticleTests {
 
   /**
    * Test method for {@link foodServer.Article#getProductFlags()}.
+   * Tests if all product specific flag can be retrieved
    */
   @Test
   public void testGetProductFlags() {
@@ -159,19 +115,13 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#setIngredients(foodServer.IIngredient)}.
-   */
-  @Test
-  public void testSetIngredientsIIngredient() {
-    fail("Not yet implemented");
-  }
-
-  /**
    * Test method for {@link foodServer.Article#removeFlag(foodServer.IFlag)}.
+   * Tests if a flag can be removed and if change can be persisted
    */
   @Test
   public void testRemoveFlag() {
     fail("Not yet implemented");
   }
+
 
 }
