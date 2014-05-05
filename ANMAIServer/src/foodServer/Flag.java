@@ -10,8 +10,6 @@ public class Flag implements IFlag{
 	private String _name;
 	private String _description;
 	private boolean _limitToProduct;
-	public Article _unnamed_Article_;
-	public Ingredient _unnamed_Ingredient_;
 
 	public long getId() {
 		return this._id;
