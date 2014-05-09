@@ -2,6 +2,9 @@ package foodServer.tests;
 
 import static org.junit.Assert.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,6 +14,7 @@ import org.junit.Test;
 import foodServer.Article;
 import foodServer.datatypes.EAN13;
 import foodServer.exceptions.NumberInvalidFormatException;
+
 
 
 /**
@@ -38,7 +42,13 @@ public class ArticleTests {
    * @throws java.lang.Exception An exception
    */
   @Before
-  public void setUp() throws Exception {}
+  public void setUp() throws Exception {
+    testArticle = new Article(5010019640161L);
+    testArticle.setName("Goldbären");
+    testArticle.setDescription("Yummy yummy");
+    //An example for a URI, follows RFC standard for URI and is from the IANA reserved name space for tests 
+    testArticle.setImageURI(new URI("http://example.com/getImage?param=exampleParam"));
+  }
 
   /**
    * @throws java.lang.Exception An exception
@@ -59,7 +69,7 @@ public class ArticleTests {
    */
   @Test
   public void testGetID() {
-    fail("Not yet implemented");
+    assertTrue(testArticle.getID()==(5010019640161L));
   }
 
   /**
@@ -67,7 +77,9 @@ public class ArticleTests {
    */
   @Test
   public void testSetID() {
-      testArticle.setID(5010019640162L);
+      assertTrue(testArticle.getID()==(5010019640161L));
+      testArticle.setID(9783446430150L);
+      assertTrue(testArticle.getID()==(9783446430150L));
   }
 
   /**
@@ -75,7 +87,7 @@ public class ArticleTests {
    */
   @Test
   public void testGetName() {
-    fail("Not yet implemented");
+    assertEquals(testArticle.getName(),"Goldbären");
   }
 
   /**
@@ -83,7 +95,9 @@ public class ArticleTests {
    */
   @Test
   public void testSetName() {
-    fail("Not yet implemented");
+    assertEquals(testArticle.getName(),"Goldbären");
+    testArticle.setName("Silberbären");
+    assertEquals(testArticle.getName(),"Silberbären");
   }
 
   /**
@@ -91,7 +105,7 @@ public class ArticleTests {
    */
   @Test
   public void testGetDescription() {
-    fail("Not yet implemented");
+    assertEquals(testArticle.getDescription(),"Yummy yummy");
   }
 
   /**
@@ -99,7 +113,9 @@ public class ArticleTests {
    */
   @Test
   public void testSetDescription() {
-    fail("Not yet implemented");
+    assertEquals(testArticle.getDescription(),"Yummy yummy");
+    testArticle.setDescription("Not as yummy");
+    assertEquals(testArticle.getDescription(),"Not as yummy");
   }
 
   /**
@@ -107,7 +123,12 @@ public class ArticleTests {
    */
   @Test
   public void testGetImageURI() {
-    fail("Not yet implemented");
+    try {
+      assertEquals(testArticle.getImageURI(),new URI("http://example.com/getImage?param=exampleParam"));
+    } catch (URISyntaxException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -115,7 +136,14 @@ public class ArticleTests {
    */
   @Test
   public void testSetImageURI() {
-    fail("Not yet implemented");
+    try {
+      assertEquals(testArticle.getImageURI(),new URI("http://example.com/getImage?param=exampleParam"));
+      testArticle.setImageURI(new URI("http://example.org/getImage2?param2=exampleParam2"));
+      assertEquals(testArticle.getImageURI(),new URI("http://example.org/getImage2?param2=exampleParam2"));
+    } catch (URISyntaxException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -129,6 +157,7 @@ public class ArticleTests {
 
 
   /**
+   * This really is a persistence method and is intrinsicially tested in {@link ArticlePersistenceTests}
    * Test method for {@link foodServer.Article#getArticle()}.
    */
   @Test
@@ -137,6 +166,7 @@ public class ArticleTests {
   }
 
   /**
+   * Flag needs to be tested to create reliable results here
    * Test method for {@link foodServer.Article#getFlags()}.
    */
   @Test
@@ -145,6 +175,7 @@ public class ArticleTests {
   }
 
   /**
+   * Flag needs to be tested to creare reliable results here
    * Test method for {@link foodServer.Article#getProductFlags()}.
    */
   @Test
