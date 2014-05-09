@@ -9,26 +9,30 @@ import java.util.List;
  *
  */
 public class Ingredient implements IIngredient {
-	private long _id;
-	private String _name;
-	private List<IFlag> _flags;
+	private long id;
+	private String name;
+	private List<IFlag> flags;
+	
+	public Ingredient(){
+	flags = new ArrayList<IFlag>();  
+	}
 	
 	
 	public long getId() {
-		return this._id;
+		return this.id;
 	}
 
 	public void setId(long aId) {
-		this._id = aId;
+		this.id = aId;
 	}
 
 
 	public String getName() {
-	    return this._name;
+	    return this.name;
 	}
 
 	public void setName(String aName) {
-		this._name = aName;
+		this.name = aName;
 	}
 
 	  public void addFlag(IFlag flag) {
@@ -42,8 +46,10 @@ public class Ingredient implements IIngredient {
 	  }
 
 	  public List<IFlag> getFlags() {
+	    //returns a new list to prevent modification of list of flags within ingredients. The flags itself should be modifiable
+	    //therefore this level of deep-copying is sufficient
 	    List<IFlag> tempFlags = new ArrayList<IFlag>();
-	    for(IFlag flag:this._flags){
+	    for(IFlag flag:this.flags){
 	      tempFlags.add(flag.copy());
 	    }
 	    return tempFlags;
