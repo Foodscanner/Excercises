@@ -36,18 +36,18 @@ public class Ingredient implements IIngredient {
 	}
 
 	  public void addFlag(IFlag flag) {
-	    // TODO Auto-generated method stub
+	    flags.add(flag);
 	    
 	  }
 	  
 	  public void removeFlag(IFlag flag) {
-	    // TODO Auto-generated method stub
-	    
+	    flags.remove(flag);
 	  }
 
 	  public List<IFlag> getFlags() {
 	    //returns a new list to prevent modification of list of flags within ingredients. The flags itself should be modifiable
 	    //therefore this level of deep-copying is sufficient
+	    System.out.println("Copying " +  flags.size() + " flags");
 	    List<IFlag> tempFlags = new ArrayList<IFlag>();
 	    for(IFlag flag:this.flags){
 	      tempFlags.add(flag.copy());

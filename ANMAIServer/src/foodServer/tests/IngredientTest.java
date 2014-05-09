@@ -31,10 +31,10 @@ public class IngredientTest {
     testIngredient.setId(123L);
     testIngredient.setName("Sugar");
     setUpFlags();
-    testIngredient.addFlag(flag1);
   }
   
   private void setUpFlags(){
+    System.out.println("setup flags");
     flag1 = new Flag();
     flag1.setId(2L);
     flag1.setDescription("Some random allergy");
@@ -73,9 +73,9 @@ public class IngredientTest {
 
   @Test
   public void testAddFlag() {
+    assertTrue(testIngredient.getFlags().size()==0);
+    testIngredient.addFlag(flag1);
     assertTrue(testIngredient.getFlags().size()==1);
-    testIngredient.addFlag(flag2);
-    assertTrue(testIngredient.getFlags().size()==2);
   }
 
   //TODO How is the equality of removed items ensured?
@@ -105,9 +105,12 @@ public class IngredientTest {
 
   @Test
   public void testGetFlags() {
-    assertTrue(testIngredient.getFlags().size()==1);
+    assertTrue(testIngredient.getFlags().size()==0);
     //get the one element that should be contained
+    testIngredient.addFlag(flag1);
     assertTrue(testIngredient.getFlags().get(0).equals(flag1));
+    testIngredient.addFlag(flag2);
+    assertTrue(testIngredient.getFlags().get(1).equals(flag2));
   }
 
   @Test
