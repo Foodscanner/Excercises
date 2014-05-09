@@ -8,12 +8,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import foodServer.Flag;
+import foodServer.IFlag;
 import foodServer.IIngredient;
 import foodServer.Ingredient;
 
 public class IngredientTest {
   
   IIngredient testIngredient;
+  IFlag flag1;
+  IFlag flag2;
 
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {}
@@ -26,6 +30,17 @@ public class IngredientTest {
     testIngredient = new Ingredient();
     testIngredient.setId(123L);
     testIngredient.setName("Sugar");
+    setUpFlags();
+    testIngredient.addFlag(flag1);
+  }
+  
+  private void setUpFlags(){
+    flag1 = new Flag();
+    flag1.setId(2L);
+    flag1.setDescription("Some random allergy");
+    flag2 = new Flag();
+    flag2.setId(3L);
+    flag2.setDescription("Some random warning flag");
   }
 
   @After
@@ -58,17 +73,41 @@ public class IngredientTest {
 
   @Test
   public void testAddFlag() {
-    fail("Not yet implemented");
+    assertTrue(testIngredient.getFlags().size()==1);
+    testIngredient.addFlag(flag2);
+    assertTrue(testIngredient.getFlags().size()==2);
   }
 
+  //TODO How is the equality of removed items ensured?
   @Test
-  public void testRemoveFlag() {
-    fail("Not yet implemented");
+  public void testRemoveFlagEmptyAfterwards() {
+    assertTrue(testIngredient.getFlags().size()==1);
+    testIngredient.removeFlag(flag1);
+    assertTrue(testIngredient.getFlags().size()==0);  
+  }
+  
+  @Test
+  public void testRemoveFlagOneAfterwards() {
+    assertTrue(testIngredient.getFlags().size()==1);
+    testIngredient.addFlag(flag2);
+    assertTrue(testIngredient.getFlags().size()==2);
+    testIngredient.removeFlag(flag1);
+    assertTrue(testIngredient.getFlags().size()==1);  
+  }
+  
+  @Test
+  public void testRemoveNonExistingFlag() {
+    assertTrue(testIngredient.getFlags().size()==1);
+    //flag2 is not part of the flag list for this ingredient
+    testIngredient.removeFlag(flag2);
+    assertTrue(testIngredient.getFlags().size()==0);
   }
 
   @Test
   public void testGetFlags() {
-    fail("Not yet implemented");
+    assertTrue(testIngredient.getFlags().size()==1);
+    //get the one element that should be contained
+    assertTrue(testIngredient.getFlags().get(0).equals(flag1));
   }
 
   @Test

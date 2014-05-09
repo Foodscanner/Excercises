@@ -175,7 +175,7 @@ public class ArticleTests {
   }
 
   /**
-   * Flag needs to be tested to creare reliable results here
+   * Flag needs to be tested to create reliable results here
    * Test method for {@link foodServer.Article#getProductFlags()}.
    */
   @Test
