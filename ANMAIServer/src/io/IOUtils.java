@@ -17,7 +17,7 @@ public class IOUtils {
 	}
 
 	// Soon to be deprecated - s.b.
-	public String getArticle(long ID) throws NumberInvalidFormatException {
+	public static String getArticle(long ID) throws NumberInvalidFormatException {
 		StandardExchangeArticle sea = new StandardExchangeArticle();
 		sea.ID = ID;
 		String returnString = null;
@@ -25,7 +25,7 @@ public class IOUtils {
 		try {
 			IEAN iean = new EAN13(ID);
 			// TODO: change to getArticle(iean);
-			IArticle article = ArticleUtil.getArticle(ID);
+			IArticle article = ArticleUtil.getArticle(iean);
 			if (article == null) {
 				sea.name = "No such article!";
 				sea.describtion = "Article does not exist in database!";
