@@ -28,7 +28,7 @@ public class IngredientTest {
   @Before
   public void setUp() throws Exception {
     testIngredient = new Ingredient();
-    testIngredient.setId(123L);
+    testIngredient.setId(123);
     testIngredient.setName("Sugar");
     setUpFlags();
   }
@@ -36,10 +36,10 @@ public class IngredientTest {
   private void setUpFlags(){
     System.out.println("setup flags");
     flag1 = new Flag();
-    flag1.setId(2L);
+    flag1.setId(2);
     flag1.setDescription("Some random allergy");
     flag2 = new Flag();
-    flag2.setId(3L);
+    flag2.setId(3);
     flag2.setDescription("Some random warning flag");
   }
 
@@ -53,9 +53,9 @@ public class IngredientTest {
 
   @Test
   public void testSetId() {
-    assertTrue(testIngredient.getId()==(123L));
-    testIngredient.setId(124L);
-    assertTrue(testIngredient.getId()==(124L));
+    assertTrue(testIngredient.getId()==(123));
+    testIngredient.setId(124);
+    assertTrue(testIngredient.getId()==(124));
     
   }
 

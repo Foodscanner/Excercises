@@ -11,7 +11,7 @@ public interface IFlag{
 	 * @param aId
 	 * Sets the id of an IFlag
 	 */
-	public void setId(long aId);
+	public void setId(int aId);
 
 	/**
 	 * @param aName
@@ -34,7 +34,7 @@ public interface IFlag{
 	/**
 	 * @return a long which serves as an identifier for the IFlag
 	 */
-	public long getId();
+	public int getId();
 
 	/**
 	 * @return A String which is a name

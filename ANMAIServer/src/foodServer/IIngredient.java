@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IIngredient {
   
-  public long getId();
+  public int getId();
 
   public String getName();
   
@@ -19,7 +19,7 @@ public interface IIngredient {
 
   public void addFlag(IFlag flag);
 
-  public void setId(long aID);
+  public void setId(int aID);
   
   public void setName(String aName);
   

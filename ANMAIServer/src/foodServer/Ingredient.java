@@ -9,7 +9,7 @@ import java.util.List;
  *
  */
 public class Ingredient implements IIngredient {
-	private long id;
+	private int id;
 	private String name;
 	private List<IFlag> flags;
 	
@@ -18,11 +18,11 @@ public class Ingredient implements IIngredient {
 	}
 	
 	
-	public long getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(long aId) {
+	public void setId(int aId) {
 		this.id = aId;
 	}
 
