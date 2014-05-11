@@ -62,7 +62,7 @@ public class ArticleTests {
   public void tearDown() throws Exception {}
 
   /**
-   * Test method for {@link foodServer.Article#Article(long)}.
+   * Test method for {@link foodServer.Article#Article(IEAN)}.
    */
   @Test
   public void testArticle() {
@@ -78,7 +78,7 @@ public class ArticleTests {
   }
 
   /**
-   * Test method for {@link foodServer.Article#setID(long)}.
+   * Test method for {@link foodServer.Article#setID(IEAN)}.
    */
   @Test
   public void testSetID() {

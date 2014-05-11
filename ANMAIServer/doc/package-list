@@ -1,5 +1,6 @@
+datatype
+datatype.test
 foodServer
-foodServer.datatypes
-foodServer.datatypes.tests
 foodServer.exceptions
 foodServer.tests
+io

@@ -43,9 +43,9 @@ public class ArticlePersistenceTests {
 
 
   /**
-   * Test method for {@link foodServer.Article#Article(long)}.
+   * Test method for {@link foodServer.Article#Article(IEAN)}.
    * Tests if an error occurs during persistence
-   * @throws NumberInvalidFormatException 
+   * @throws NumberInvalidFormatException If ean set during test is invalid, which should not occur
    */
   @Before
   public void testArticle() throws NumberInvalidFormatException {

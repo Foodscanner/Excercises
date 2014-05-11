@@ -112,7 +112,7 @@ public EAN13() {
   }
   
   /**
-   * @see datatypes.IEAN#setEan(long)
+   * @see datatype.IEAN#setEan(long)
    * @param ean This value is being checked
    * Sets/Updates the EAN if EAN is valid
    */
@@ -124,7 +124,7 @@ public EAN13() {
   }
 
 /**
- * @see datatypes.IEAN#getEAN()
+ * @see datatype.IEAN#getEAN()
  * Returns the value of the EAN as long
  */
 public long getEAN() {

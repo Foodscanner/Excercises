@@ -34,12 +34,12 @@ public class Article implements IArticle {
 	
 	/**
 	 * Constructor of an article with parameter id
-	 * @param aId The id to set
+	 * @param ean The ean to set
 	 * @throws NumberInvalidFormatException This exception is thrown if number is not a valid EAN. Use EAN validation from datatypes/EAN13 to prevent exception
 	 * 
 	 */
-	public Article(IEAN aId) throws NumberInvalidFormatException { 
-		id = aId;
+	public Article(IEAN ean) throws NumberInvalidFormatException { 
+		id = ean;
 	}
 
 	/**
@@ -53,11 +53,11 @@ public class Article implements IArticle {
 	
 	/**
 	 * If aId is a valid id, it is set as new id
-	 * @see foodServer.IArticle#setID(long)
-	 * @param aID The id to set
+	 * @see foodServer.IArticle#setID(IEAN ean)
+	 * @param ean The ean to set
 	 */
-	public void setID(IEAN aId) {
-		id = aId;
+	public void setID(IEAN ean) {
+		id = ean;
 	}
 
 	/**

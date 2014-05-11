@@ -21,7 +21,6 @@ public class ArticleUtil {
 	 * Retrieves an article from database and sets values correctly
 	 * @param ean1 The id of the article, needs to be a valid EAN
 	 * @return An article of type Article, if article is in Database. Else null is returned.
-	 * @throws NumberInvalidFormatException if number is not an ean. Use EAN13.isValid method to prevent error to be thrown
 	 */
 	public static Article getArticle(IEAN ean1) {
 		Article article = null;
