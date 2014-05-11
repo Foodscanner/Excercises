@@ -1,7 +1,7 @@
 package foodServer;
 
-import foodServer.datatypes.EAN13;
-import foodServer.datatypes.IEAN;
+import datatype.EAN13;
+import datatype.IEAN;
 import foodServer.exceptions.ArticleNotFoundException;
 import foodServer.exceptions.NumberInvalidFormatException;
 

@@ -1,4 +1,4 @@
-package foodServer.datatypes.tests;
+package datatype.test;
 
 import static org.junit.Assert.*;
 
@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import foodServer.datatypes.EAN13;
-import foodServer.datatypes.IEAN;
+import datatype.EAN13;
+import datatype.IEAN;
 
 public class EAN13Tests {
 

@@ -11,8 +11,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import datatype.EAN13;
 import foodServer.Article;
-import foodServer.datatypes.EAN13;
 import foodServer.exceptions.NumberInvalidFormatException;
 
 

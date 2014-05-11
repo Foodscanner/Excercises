@@ -3,4 +3,4 @@
  * @author Christian
  *
  */
-package foodServer.datatypes.tests;
+package datatype.test;

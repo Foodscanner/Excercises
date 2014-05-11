@@ -1,4 +1,4 @@
-package foodServer.datatypes;
+package datatype;
 
 import foodServer.exceptions.NumberInvalidFormatException;
 

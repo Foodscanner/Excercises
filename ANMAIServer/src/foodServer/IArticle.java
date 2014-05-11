@@ -3,7 +3,7 @@ package foodServer;
 import java.net.URI;
 import java.util.List;
 
-import foodServer.datatypes.IEAN;
+import datatype.IEAN;
 
 
 /**

@@ -1,4 +1,4 @@
-package io;
+package datatype;
 
 import java.net.URI;
 import java.util.HashMap;

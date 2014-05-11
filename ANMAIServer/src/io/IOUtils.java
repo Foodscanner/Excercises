@@ -4,12 +4,13 @@ import java.util.HashMap;
 
 import com.thoughtworks.xstream.XStream;
 
+import datatype.EAN13;
+import datatype.IEAN;
+import datatype.StandardExchangeArticle;
 import foodServer.Article;
 import foodServer.ArticleUtil;
 import foodServer.IArticle;
 import foodServer.IFlag;
-import foodServer.datatypes.EAN13;
-import foodServer.datatypes.IEAN;
 import foodServer.exceptions.NumberInvalidFormatException;
 
 public class IOUtils {

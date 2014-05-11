@@ -1,4 +1,4 @@
-package foodServer.datatypes;
+package datatype;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +112,7 @@ public EAN13() {
   }
   
   /**
-   * @see foodServer.datatypes.IEAN#setEan(long)
+   * @see datatypes.IEAN#setEan(long)
    * @param ean This value is being checked
    * Sets/Updates the EAN if EAN is valid
    */
@@ -124,7 +124,7 @@ public EAN13() {
   }
 
 /**
- * @see foodServer.datatypes.IEAN#getEAN()
+ * @see datatypes.IEAN#getEAN()
  * Returns the value of the EAN as long
  */
 public long getEAN() {

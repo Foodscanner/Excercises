@@ -8,8 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import foodServer.datatypes.EAN13;
-import foodServer.datatypes.IEAN;
+import datatype.EAN13;
+import datatype.IEAN;
 import foodServer.exceptions.NumberInvalidFormatException;
 
 /**
