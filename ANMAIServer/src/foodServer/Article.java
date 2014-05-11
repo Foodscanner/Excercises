@@ -138,14 +138,6 @@ public class Article implements IArticle {
 	}*/
 
 	/**
-	 * @see foodServer.IArticle#getArticle()
-	 * Returns a persisted article from the database
-	 */
-	public IArticle getArticle() {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
 	 * @see foodServer.IArticle#getFlags()
 	 * Returns a list of all flags
 	 */

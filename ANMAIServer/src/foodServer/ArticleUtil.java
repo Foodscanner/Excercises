@@ -7,8 +7,10 @@ package foodServer;
  */
 public class ArticleUtil {
 	public Article article;
+	
+	private ArticleUtil(){}
 
-	public IArticle getArticle(long aId) {
+	public static IArticle getArticle(long aId) {
 		throw new UnsupportedOperationException();
 	}
 }

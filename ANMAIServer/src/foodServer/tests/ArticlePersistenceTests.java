@@ -2,6 +2,9 @@ package foodServer.tests;
 
 import static org.junit.Assert.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -9,11 +12,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import foodServer.Article;
+import foodServer.ArticleUtil;
+import foodServer.IArticle;
+import foodServer.exceptions.NumberInvalidFormatException;
 
 public class ArticlePersistenceTests {
   
-  Article beforePersistence;
-  Article afterPersistence;
+  Article articleOne;
+  Article articleTwo;
 
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {}
@@ -22,7 +28,10 @@ public class ArticlePersistenceTests {
   public static void tearDownAfterClass() throws Exception {}
 
   @Before
-  public void setUp() throws Exception {}
+  public void setUp() throws Exception {
+    //delete tables
+    //insert new tables
+  }
 
   @After
   public void tearDown() throws Exception {}
@@ -34,18 +43,54 @@ public class ArticlePersistenceTests {
    */
   @Before
   public void testArticle() {
-    //...article beforePersistence...filling
-    //...article afterPersistence...retrieving
-    fail("Not yet implemented");
+    try {
+      articleOne = new Article(5010019640161L);
+    } catch (NumberInvalidFormatException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+      fail("No exception expected here");
+   }
+    articleOne.setName("Goldbären");
+    articleOne.setDescription("Yummy yummy");
+    //An example for a URI, follows RFC standard for URI and is from the IANA reserved name space for tests 
+    try {
+      articleOne.setImageURI(new URI("http://example.com/getImage?param=exampleParam"));
+    } catch (URISyntaxException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+      fail("No exception expected here");
+    }
+    
+    try {
+      articleTwo = new Article(1234567891019L);
+      } catch (NumberInvalidFormatException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        fail("No exception expected here");
+     }
+      articleTwo.setName("Example product");
+      articleTwo.setDescription("Paperlike dry taste with black letters to assist mouthfeel");
+      //An example for a URI, follows RFC standard for URI and is from the IANA reserved name space for tests 
+      try {
+        articleTwo.setImageURI(new URI("http://example.com/getImage?param=exampleParam"));
+      } catch (URISyntaxException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+        fail("No exception expected here");
+      }
+    
   }
 
   /**
    * Test method for {@link foodServer.Article#getID()}.
-   * Tests if persisted is equal to id beforePersistence
+   * Tests if persisted is equal to id articleOne
+   * @throws NumberInvalidFormatException 
    */
   @Test
-  public void testGetID() {
-    fail("Not yet implemented");
+  public void testGetID() throws NumberInvalidFormatException {
+    articleOne.persist();
+    IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
+    assertTrue(articleOne.getID()==newArticle.getID());
   }
 
 
@@ -56,7 +101,9 @@ public class ArticlePersistenceTests {
    */
   @Test
   public void testGetName() {
-    fail("Not yet implemented");
+    articleOne.persist();
+    IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
+    assertEquals(articleOne.getName(),newArticle.getName());
   }
 
   /**
@@ -65,7 +112,9 @@ public class ArticlePersistenceTests {
    */
   @Test
   public void testGetDescription() {
-    fail("Not yet implemented");
+    articleOne.persist();
+    IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
+    assertEquals(articleOne.getDescription(),newArticle.getDescription());
   }
 
   /**
@@ -74,7 +123,9 @@ public class ArticlePersistenceTests {
    */
   @Test
   public void testGetImageURI() {
-    fail("Not yet implemented");
+    articleOne.persist();
+    IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
+    assertEquals(articleOne.getImageURI(),newArticle.getImageURI());
   }
 
   /**

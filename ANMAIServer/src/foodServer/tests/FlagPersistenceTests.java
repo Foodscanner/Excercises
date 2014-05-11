@@ -29,7 +29,7 @@ public class FlagPersistenceTests {
   
   /**
    * Test method for {@link foodServer.Flag#getID()}.
-   * Tests if persisted is equal to id beforePersistence
+   * Tests if persisted is equal to id articleOne
    */
   @Test
   public void testGetID() {
