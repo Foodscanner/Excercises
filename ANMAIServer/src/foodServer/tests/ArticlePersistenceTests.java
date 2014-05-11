@@ -97,10 +97,11 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getName()}.
    * Tests if persisted name is equal
+   * @throws NumberInvalidFormatException 
    * 
    */
   @Test
-  public void testGetName() {
+  public void testGetName() throws NumberInvalidFormatException {
     articleOne.persist();
     IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
     assertEquals(articleOne.getName(),newArticle.getName());
@@ -109,9 +110,10 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getDescription()}.
    * Tests if persisted Description is equal
+   * @throws NumberInvalidFormatException 
    */
   @Test
-  public void testGetDescription() {
+  public void testGetDescription() throws NumberInvalidFormatException {
     articleOne.persist();
     IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
     assertEquals(articleOne.getDescription(),newArticle.getDescription());
@@ -120,9 +122,10 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getImageURI()}.
    * Tests if persisted imageURI is equal
+   * @throws NumberInvalidFormatException 
    */
   @Test
-  public void testGetImageURI() {
+  public void testGetImageURI() throws NumberInvalidFormatException {
     articleOne.persist();
     IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
     assertEquals(articleOne.getImageURI(),newArticle.getImageURI());
