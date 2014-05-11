@@ -38,8 +38,18 @@ public class IOUtils {
 //	public String getArticle(IEAN ID){
 //		String returnString = null;
 //		Article article = ArticleUtil.getArticle(ID);
+	
+//		StandardExchangeArticle sea = new StandardExchangeArticle();
+//		sea.name = article.getName();
+//		sea.describtion = article.getDescription();
+//		sea.pictureURI = article.getImageURI();
+//		sea.flags = new HashMap<Integer, String>();
+//		for(IFlag flag : article.getFlags()){
+//		sea.flags.put((int)flag.getId(), flag.getName());
+//	}
+	
 //		XStream serializer = new XStream();
-//		returnString = serializer.toXML(article);
+//		returnString = serializer.toXML(ea);
 //		return returnString;
 //	}
 	
