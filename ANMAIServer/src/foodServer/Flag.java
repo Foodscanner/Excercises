@@ -6,44 +6,44 @@ package foodServer;
  *
  */
 public class Flag implements IFlag{
-	private long _id;
-	private String _name;
-	private String _description;
-	private boolean _limitToProduct;
+	private long id;
+	private String name;
+	private String description;
+	private boolean limitToProduct;
 
 	public long getId() {
-		return this._id;
+		return this.id;
 	}
 
 	public void setId(long aId) {
-		this._id = aId;
+		this.id = aId;
 	}
 
 	public String getName() {
-		return this._name;
+		return this.name;
 	}
 
 	public void setName(String aName) {
-		this._name = aName;
+		this.name = aName;
 	}
 
 	public String getDescription() {
-		return this._description;
+		return this.description;
 	}
 
 	public void setDescription(String aDescription) {
-		this._description = aDescription;
+		this.description = aDescription;
 	}
 
 	public boolean getLimitToProduct() {
-		return this._limitToProduct;
+		return this.limitToProduct;
 	}
 
 	public void setLimitToProduct(boolean aLimitToProduct) {
-		this._limitToProduct = aLimitToProduct;
+		this.limitToProduct = aLimitToProduct;
 	}
 
-    public IFlag copy() {
+    public Flag copy() {
     // TODO Auto-generated method stub
     return null;
     }

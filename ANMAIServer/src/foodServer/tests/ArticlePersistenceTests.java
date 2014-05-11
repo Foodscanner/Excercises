@@ -14,12 +14,17 @@ import org.junit.Test;
 import foodServer.Article;
 import foodServer.ArticleUtil;
 import foodServer.IArticle;
+import foodServer.datatypes.EAN13;
+import foodServer.datatypes.IEAN;
 import foodServer.exceptions.NumberInvalidFormatException;
 
 public class ArticlePersistenceTests {
   
   Article articleOne;
   Article articleTwo;
+  IEAN ean1;
+  IEAN ean2;
+  
 
   @BeforeClass
   public static void setUpBeforeClass() throws Exception {}
@@ -28,7 +33,7 @@ public class ArticlePersistenceTests {
   public static void tearDownAfterClass() throws Exception {}
 
   @Before
-  public void setUp() throws Exception {
+  public void setUpDB() throws Exception {
     //delete tables
     //insert new tables
   }
@@ -40,16 +45,13 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#Article(long)}.
    * Tests if an error occurs during persistence
+   * @throws NumberInvalidFormatException 
    */
   @Before
-  public void testArticle() {
-    try {
-      articleOne = new Article(5010019640161L);
-    } catch (NumberInvalidFormatException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-      fail("No exception expected here");
-   }
+  public void testArticle() throws NumberInvalidFormatException {
+    ean1 = new EAN13(5010019640161L);
+    ean2 = new EAN13(1234567891019L);
+    articleOne = new Article(ean1);
     articleOne.setName("Goldbären");
     articleOne.setDescription("Yummy yummy");
     //An example for a URI, follows RFC standard for URI and is from the IANA reserved name space for tests 
@@ -60,14 +62,7 @@ public class ArticlePersistenceTests {
       e.printStackTrace();
       fail("No exception expected here");
     }
-    
-    try {
-      articleTwo = new Article(1234567891019L);
-      } catch (NumberInvalidFormatException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-        fail("No exception expected here");
-     }
+      articleTwo = new Article(ean2);
       articleTwo.setName("Example product");
       articleTwo.setDescription("Paperlike dry taste with black letters to assist mouthfeel");
       //An example for a URI, follows RFC standard for URI and is from the IANA reserved name space for tests 
@@ -89,8 +84,8 @@ public class ArticlePersistenceTests {
   @Test
   public void testGetID() throws NumberInvalidFormatException {
     articleOne.persist();
-    IArticle newArticle = ArticleUtil.getArticle(articleOne.getID());
-    assertTrue(articleOne.getID()==newArticle.getID());
+    IArticle newArticle = ArticleUtil.getArticle(ean1);
+    assertEquals(articleOne.getID(),newArticle.getID());
   }
 
 

@@ -25,6 +25,8 @@ import foodServer.exceptions.NumberInvalidFormatException;
 public class ArticleTests {
   
    Article testArticle;
+   EAN13 ean1;
+   EAN13 ean2;
 
   /**
    * @throws java.lang.Exception An exception
@@ -43,11 +45,14 @@ public class ArticleTests {
    */
   @Before
   public void setUp() throws Exception {
-    testArticle = new Article(5010019640161L);
+    ean1 = new EAN13(5010019640161L);
+    ean2 = new EAN13(9783446430150L);
+    testArticle = new Article(ean1);
     testArticle.setName("Goldbären");
     testArticle.setDescription("Yummy yummy");
     //An example for a URI, follows RFC standard for URI and is from the IANA reserved name space for tests 
     testArticle.setImageURI(new URI("http://example.com/getImage?param=exampleParam"));
+    
   }
 
   /**
@@ -69,7 +74,7 @@ public class ArticleTests {
    */
   @Test
   public void testGetID() {
-    assertTrue(testArticle.getID()==(5010019640161L));
+    assertEquals(testArticle.getID(),new EAN13());
   }
 
   /**
@@ -77,9 +82,9 @@ public class ArticleTests {
    */
   @Test
   public void testSetID() {
-      assertTrue(testArticle.getID()==(5010019640161L));
-      testArticle.setID(9783446430150L);
-      assertTrue(testArticle.getID()==(9783446430150L));
+      assertEquals(testArticle.getID(),ean1);
+      testArticle.setID(ean2);
+      assertEquals(testArticle.getID(),ean2);
   }
 
   /**
