@@ -84,7 +84,7 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getID()}.
    * Tests if persisted is equal to id articleOne
-   * @throws NumberInvalidFormatException 
+   * @throws NumberInvalidFormatException Is thrown if id is not a valid ean
    */
   @Test
   public void testGetID() throws NumberInvalidFormatException {
@@ -97,7 +97,7 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getName()}.
    * Tests if persisted name is equal
-   * @throws NumberInvalidFormatException 
+   * @throws NumberInvalidFormatException Is thrown if number is not a valid EAN
    * 
    */
   @Test
@@ -110,7 +110,7 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getDescription()}.
    * Tests if persisted Description is equal
-   * @throws NumberInvalidFormatException 
+   * @throws NumberInvalidFormatException If number is not a valid EAN, exception is thrown
    */
   @Test
   public void testGetDescription() throws NumberInvalidFormatException {
@@ -122,7 +122,7 @@ public class ArticlePersistenceTests {
   /**
    * Test method for {@link foodServer.Article#getImageURI()}.
    * Tests if persisted imageURI is equal
-   * @throws NumberInvalidFormatException 
+   * @throws NumberInvalidFormatException If number is not a valid EAN, exception is thrown
    */
   @Test
   public void testGetImageURI() throws NumberInvalidFormatException {
@@ -137,16 +137,6 @@ public class ArticlePersistenceTests {
    */
   @Test
   public void testGetIngredients() {
-    fail("Not yet implemented");
-  }
-
-  /**
-   * Test method for {@link foodServer.Article#getArticle()}.
-   * Tests if product can be retrieved from Database...
-   * 
-   */
-  @Test
-  public void testGetProduct() {
     fail("Not yet implemented");
   }
 

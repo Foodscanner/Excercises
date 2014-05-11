@@ -156,14 +156,7 @@ public class ArticleTests {
 
 
 
-  /**
-   * This really is a persistence method and is intrinsicially tested in {@link ArticlePersistenceTests}
-   * Test method for {@link foodServer.Article#getArticle()}.
-   */
-  @Test
-  public void testGetProduct() {
-    fail("Not yet implemented");
-  }
+
 
   /**
    * Flag needs to be tested to create reliable results here
