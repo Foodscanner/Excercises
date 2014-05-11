@@ -10,6 +10,7 @@ import java.util.HashMap;
  *
  */
 public class StandardExchangeArticle {
+long ID;
 String name;
 String describtion;
 URI pictureURI;
