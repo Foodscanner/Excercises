@@ -10,9 +10,9 @@ import java.util.HashMap;
  *
  */
 public class StandardExchangeArticle {
-long ID;
-String name;
-String describtion;
-URI pictureURI;
-HashMap<Integer, String> flags;
+public long ID;
+public String name;
+public String describtion;
+public URI pictureURI;
+public HashMap<Integer, String> flags;
 }

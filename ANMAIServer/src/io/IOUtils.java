@@ -7,7 +7,6 @@ import com.thoughtworks.xstream.XStream;
 import datatype.EAN13;
 import datatype.IEAN;
 import datatype.StandardExchangeArticle;
-import foodServer.Article;
 import foodServer.ArticleUtil;
 import foodServer.IArticle;
 import foodServer.IFlag;
@@ -18,14 +17,21 @@ public class IOUtils {
 	}
 
 	// Soon to be deprecated - s.b.
-	public static String getArticle(long ID) throws NumberInvalidFormatException {
+	/**
+	 * Upon getting a long ID originating in the scanner app returns a StandardExchangeArticle in an XStream XML stream as a String object.
+	 * If the ID is valid and the article contained in the database, the StandardExchangeArticle contains Information about that Article.
+	 * If the ID is invalid or the article does not exist in the database, the StandardExchangeArticle contains Information to that effect.
+	 * @param ID
+	 * @return
+	 * @throws NumberInvalidFormatException
+	 */
+	public static String getArticle(long ID) {
 		StandardExchangeArticle sea = new StandardExchangeArticle();
 		sea.ID = ID;
 		String returnString = null;
 
 		try {
 			IEAN iean = new EAN13(ID);
-			// TODO: change to getArticle(iean);
 			IArticle article = ArticleUtil.getArticle(iean);
 			if (article == null) {
 				sea.name = "No such article!";
@@ -37,9 +43,7 @@ public class IOUtils {
 			sea.pictureURI = article.getImageURI();
 			sea.flags = new HashMap<Integer, String>();
 			for (IFlag flag : article.getFlags()) {
-				// TODO: remove cast to int as soon as issue #4 has been
-				// resolved
-				sea.flags.put((int) flag.getId(), flag.getName());
+				sea.flags.put(flag.getId(), flag.getName());
 			}
 		} catch (NumberInvalidFormatException ex) {
 			sea.name = "File corruption!";
