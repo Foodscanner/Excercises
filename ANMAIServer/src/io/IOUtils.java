@@ -16,7 +16,6 @@ public class IOUtils {
 	private IOUtils() {
 	}
 
-	// Soon to be deprecated - s.b.
 	/**
 	 * Upon getting a long ID originating in the scanner app returns a StandardExchangeArticle in an XStream XML stream as a String object.
 	 * If the ID is valid and the article contained in the database, the StandardExchangeArticle contains Information about that Article.
@@ -53,5 +52,11 @@ public class IOUtils {
 		XStream serializer = new XStream();
 		returnString = serializer.toXML(sea);
 		return returnString;
+	}
+	
+	public static StandardExchangeArticle deserializeStandardArticle(String xml){
+		XStream deserializer = new XStream();
+		StandardExchangeArticle sea = (StandardExchangeArticle)deserializer.fromXML(xml);
+		return sea;
 	}
 }
