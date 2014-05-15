@@ -13,6 +13,7 @@ public class Ingredient implements IIngredient {
 	private String name;
 	private List<IFlag> flags;
 	
+	
 	public Ingredient(){
 	flags = new ArrayList<IFlag>();  
 	}
@@ -37,7 +38,6 @@ public class Ingredient implements IIngredient {
 
 	  public void addFlag(IFlag flag) {
 	    flags.add(flag);
-	    
 	  }
 	  
 	  public void removeFlag(IFlag flag) {
@@ -56,13 +56,26 @@ public class Ingredient implements IIngredient {
 	  }
 	  
 	  
-	  public IIngredient copy() {
-	    // TODO Auto-generated method stub
-	    return null;
+	  /**
+	   * Copies an ingredient with all properties except id, which is left unfilled
+	   * @see foodServer.IIngredient#copy()
+	   */
+	  public Ingredient copy() {
+	    Ingredient ingredient = new Ingredient();
+	    ingredient.setName(this.getName());
+	    
+	    for(IFlag flag: this.getFlags()){
+	      ingredient.addFlag(flag);
+	    }
+	    
+        return ingredient;
+	     
 	  }
 	  
 	  
     public void persist() {
+      //if id is null = new article
+      //else update
       // TODO Auto-generated method stub
     }
 
